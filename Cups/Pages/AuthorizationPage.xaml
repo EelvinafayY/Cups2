@@ -1,0 +1,51 @@
+﻿<Page x:Class="Cups.Pages.AuthorizationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:Cups.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AuthorizationPage">
+
+    <Grid Background="#D9D9D9">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Viewbox Grid.Column="1" Grid.Row="0">
+            <Canvas Width="200" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock
+                           Text="Авторизация" TextAlignment="Center" Canvas.Left="35" Canvas.Top="30"
+                           FontSize="20" Foreground="#FF352019" FontWeight="Bold"/>
+            </Canvas>
+        </Viewbox>
+        <Viewbox Grid.Row="1" Grid.Column="1" Cursor="">
+            <Canvas Width="200" Height="20">
+                <TextBox x:Name="LoginTB" materialDesign:HintAssist.Hint="Логин"  MinWidth="150" Canvas.Left="25" Canvas.Top="-15"></TextBox>
+                <PasswordBox x:Name="PasswordPB" materialDesign:HintAssist.Hint="Пароль" MinWidth="150" HorizontalAlignment="Left" Canvas.Top="27" VerticalAlignment="Top" Canvas.Left="25"></PasswordBox>
+            </Canvas>
+        </Viewbox>
+        <Viewbox Grid.Row="2" Grid.Column="1">
+            <Canvas Width="200" Height="30" Grid.Row="0">
+                <Button Grid.Row="0" x:Name="ComeBT"
+ Content="Войти" IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}}"
+Style="{StaticResource MaterialDesignRaisedButton}" 
+FontSize="10" Cursor="Hand" HorizontalAlignment="Left" Canvas.Left="45" VerticalAlignment="Top" Width="108" Canvas.Top="-28" Height="26" Click="ComeBT_Click" />
+
+            </Canvas>
+
+        </Viewbox>
+
+
+
+
+    </Grid>
+</Page>

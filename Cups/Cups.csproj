@@ -1,0 +1,386 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0B8628D0-65C5-4D6E-84E8-9D1BD172BE84}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Cups</RootNamespace>
+    <AssemblyName>Cups</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=2.1.4.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.2.1.4\lib\net462\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=4.3.0.3, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.4.3.0\lib\net452\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.77\lib\net462\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Converters\PhotoConverter.cs" />
+    <Compile Include="Models\Admin.cs" />
+    <Compile Include="Models\Gender.cs" />
+    <Compile Include="Models\LessonDrink_Stajer.cs" />
+    <Compile Include="Models\Lesson_Drink.cs" />
+    <Compile Include="Models\Menu.cs" />
+    <Compile Include="Models\Partials\Admin.cs" />
+    <Compile Include="Models\Partials\Stajer.cs" />
+    <Compile Include="Models\Partials\Step.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\Stajer.cs" />
+    <Compile Include="Models\Step.cs" />
+    <Compile Include="Models\Tests.cs" />
+    <Compile Include="Models\Type.cs" />
+    <Compile Include="Models\View.cs" />
+    <Compile Include="Pages\Admin\AddDrinkPage.xaml.cs">
+      <DependentUpon>AddDrinkPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\AddPositionPage.xaml.cs">
+      <DependentUpon>AddPositionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\AddStajerProfilePage.xaml.cs">
+      <DependentUpon>AddStajerProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\AdminHomePage.xaml.cs">
+      <DependentUpon>AdminHomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\DesertsPage.xaml.cs">
+      <DependentUpon>DesertsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\DrinksPage.xaml.cs">
+      <DependentUpon>DrinksPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\EatPage.xaml.cs">
+      <DependentUpon>EatPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Stager\ListOtherMenuStajer.xaml.cs">
+      <DependentUpon>ListOtherMenuStajer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Stager\DesertsPageStajer.xaml.cs">
+      <DependentUpon>DesertsPageStajer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Stager\DrinksPageStajer.xaml.cs">
+      <DependentUpon>DrinksPageStajer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Stager\EatPageStajer.xaml.cs">
+      <DependentUpon>EatPageStajer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\ListDrinksPage.xaml.cs">
+      <DependentUpon>ListDrinksPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\ListOtherMenu.xaml.cs">
+      <DependentUpon>ListOtherMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\MenuPage.xaml.cs">
+      <DependentUpon>MenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Stager\MenuPageStajer.xaml.cs">
+      <DependentUpon>MenuPageStajer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Stager\StajerHomePage.xaml.cs">
+      <DependentUpon>StajerHomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\StajerProfilePage.xaml.cs">
+      <DependentUpon>StajerProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Stager\ListDrinksPageStajer.xaml.cs">
+      <DependentUpon>ListDrinksPageStajer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\StatisticsPage.xaml.cs">
+      <DependentUpon>StatisticsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Test\Test1\Query1Page.xaml.cs">
+      <DependentUpon>Query1Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Test\Test1\Query2Page.xaml.cs">
+      <DependentUpon>Query2Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Test\Test1\Query3Page.xaml.cs">
+      <DependentUpon>Query3Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Test\Test1\Query4Page.xaml.cs">
+      <DependentUpon>Query4Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Test\Test1\Query5Page.xaml.cs">
+      <DependentUpon>Query5Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Test\Test1\TestsPage.xaml.cs">
+      <DependentUpon>TestsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\ViewDrinkAdmin.xaml.cs">
+      <DependentUpon>ViewDrinkAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Stager\ViewDrinkStajer.xaml.cs">
+      <DependentUpon>ViewDrinkStajer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\ViewPositionPage.xaml.cs">
+      <DependentUpon>ViewPositionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\ViewStajersPage.xaml.cs">
+      <DependentUpon>ViewStajersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Stager\ViewPositionStajerPage.xaml.cs">
+      <DependentUpon>ViewPositionStajerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Services\DBConnection.cs" />
+    <Compile Include="Services\NetManager.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Pages\Admin\AddDrinkPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Admin\AddPositionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Admin\AddStajerProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Admin\AdminHomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AuthorizationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Admin\DesertsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Admin\DrinksPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Admin\EatPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Stager\ListOtherMenuStajer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Stager\DesertsPageStajer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Stager\DrinksPageStajer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Stager\EatPageStajer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Admin\ListDrinksPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Admin\ListOtherMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Admin\MenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Stager\MenuPageStajer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Stager\StajerHomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Admin\StajerProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Stager\ListDrinksPageStajer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\StatisticsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Test\Test1\Query1Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Test\Test1\Query2Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Test\Test1\Query3Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Test\Test1\Query4Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Test\Test1\Query5Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Test\Test1\TestsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Admin\ViewDrinkAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Stager\ViewDrinkStajer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Admin\ViewPositionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Admin\ViewStajersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Stager\ViewPositionStajerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Pages\AuthorizationPage.xaml.cs">
+      <DependentUpon>AuthorizationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\nullphoto.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\drinks.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\deserts.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\eat.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\blacktea.jpg" />
+    <Resource Include="Images\classic.jpg" />
+    <Resource Include="Images\greentea.jpeg" />
+    <Resource Include="Images\hometea.jpg" />
+    <Resource Include="Images\lemonade.jpg" />
+    <Resource Include="Images\necoffee.jpg" />
+    <Resource Include="Images\special.jpg" />
+    <Resource Include="Images\ylyn.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\qqq.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets'))" />
+  </Target>
+</Project>
